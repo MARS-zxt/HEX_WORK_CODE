@@ -31,7 +31,7 @@ enum class ValveState {
     STOPPED          // 已停止 (user pressed stop)
 };
 
-inline const char* valveStateName(ValveState s) {
+[[nodiscard]] inline const char* valveStateName(ValveState s) {
     switch (s) {
     case ValveState::IDLE:           return "IDLE";
     case ValveState::STARTING_OPEN:  return "STARTING_OPEN";

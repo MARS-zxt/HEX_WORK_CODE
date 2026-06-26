@@ -167,15 +167,16 @@ void WaveformChart::paintEvent(QPaintEvent *)
     p.save();
     p.setClipRect(plotArea);
 
+    // Binary search for the first point in the visible window
+    auto it = std::lower_bound(data_.begin(), data_.end(), x_min_,
+        [](const DataPoint &dp, double v) { return dp.time < v; });
+
     QPainterPath path;
     bool firstPoint = true;
 
-    for (const auto &dp : data_) {
-        if (dp.time < x_min_) continue; // skip before visible window
-        if (dp.time > x_max_) break;    // beyond visible window
-
-        double px = plotArea.left() + ((dp.time - x_min_) / (x_max_ - x_min_)) * plotArea.width();
-        double py = plotArea.bottom() - ((dp.current - y_min_) / (y_max_ - y_min_)) * plotArea.height();
+    for (; it != data_.end() && it->time <= x_max_; ++it) {
+        double px = plotArea.left() + ((it->time - x_min_) / (x_max_ - x_min_)) * plotArea.width();
+        double py = plotArea.bottom() - ((it->current - y_min_) / (y_max_ - y_min_)) * plotArea.height();
         py = qBound(static_cast<double>(plotArea.top() - 50), py,
                     static_cast<double>(plotArea.bottom() + 50));
 

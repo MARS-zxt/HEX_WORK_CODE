@@ -46,7 +46,9 @@ MainWindow::~MainWindow()
     tcp_server_->close();
     for (auto *client : tcp_clients_) {
         client->disconnectFromHost();
+        client->deleteLater();  // explicit cleanup — disconnectFromHost is async
     }
+    tcp_clients_.clear();
 }
 
 // ============================================================================

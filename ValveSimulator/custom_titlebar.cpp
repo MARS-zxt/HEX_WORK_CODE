@@ -138,7 +138,7 @@ void CustomTitleBar::setDarkMode(bool dark)
 void CustomTitleBar::mousePressEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton) {
-        drag_start_pos_ = event->globalPos() - window()->geometry().topLeft();
+        drag_start_pos_ = event->globalPosition().toPoint() - window()->geometry().topLeft();
         dragging_ = true;
     }
 }
@@ -146,7 +146,7 @@ void CustomTitleBar::mousePressEvent(QMouseEvent *event)
 void CustomTitleBar::mouseMoveEvent(QMouseEvent *event)
 {
     if (dragging_ && (event->buttons() & Qt::LeftButton)) {
-        window()->move(event->globalPos() - drag_start_pos_);
+        window()->move(event->globalPosition().toPoint() - drag_start_pos_);
     }
 }
 

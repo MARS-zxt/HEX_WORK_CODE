@@ -91,7 +91,7 @@ void ValveSimulator::clearWaveform()
 
 bool ValveSimulator::isRunning() const
 {
-    QMutexLocker lock(&mutex_);
+    // tick_timer_ lives in the main thread; no lock needed for isActive()
     return tick_timer_->isActive();
 }
 
@@ -210,11 +210,21 @@ void ValveSimulator::onTick()
     // Record waveform data point
     waveform_.append({elapsed_time_, current_});
 
-    // Emit signals
+    // Cap waveform to prevent unbounded memory growth (10 min @ 100 ms = 6000 pts)
+    static constexpr int MAX_WAVEFORM_POINTS = 6000;
+    if (waveform_.size() > MAX_WAVEFORM_POINTS) {
+        waveform_.remove(0, waveform_.size() - MAX_WAVEFORM_POINTS);
+    }
+
+    // Snapshot state under lock before emitting signals
+    ValveState currentState = state_;
+    bool reachedLimit = (currentState == ValveState::STALLING_OPEN ||
+                         currentState == ValveState::STALLING_CLOSE);
+    bool isOpenLimit  = (currentState == ValveState::STALLING_OPEN);
     lock.unlock();
 
-    if (state_ == ValveState::STALLING_OPEN || state_ == ValveState::STALLING_CLOSE) {
-        emit limitReached(state_ == ValveState::STALLING_OPEN);
+    if (reachedLimit) {
+        emit limitReached(isOpenLimit);
     }
 
     emit stateChanged();
