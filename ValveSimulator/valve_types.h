@@ -10,11 +10,11 @@
 // Valve Parameters
 // ============================================================================
 struct ValveParams {
-    double startup_time   = 0.5;   // 启动时间 (seconds)
+    double startup_time   = 1.0;   // 启动时间 (seconds)
     double travel_time    = 3.0;   // 到位时间 (seconds)
-    double running_current= 100.0; // 动作电流 (mA)
-    double stall_current  = 300.0; // 堵转电流 (mA)
-    double startup_current= 200.0; // 启动电流 (mA)
+    double running_current= 10.0;  // 动作电流 (mA)
+    double stall_current  = 90.0;  // 堵转电流 (mA)
+    double startup_current= 100.0; // 启动电流 (mA)
 };
 
 // ============================================================================

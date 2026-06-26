@@ -1,4 +1,5 @@
 #include "valve_simulator.h"
+#include <QMutexLocker>
 #include <QtMath>
 
 // ============================================================================
@@ -22,21 +23,11 @@ ValveSimulator::~ValveSimulator()
 // ============================================================================
 void ValveSimulator::openValve()
 {
-    QMutexLocker lock(&mutex_);
-    if (position_ >= 1.0 - 1e-9) {
-        // Already fully open — just signal
-        return;
-    }
     startAction(true);
 }
 
 void ValveSimulator::closeValve()
 {
-    QMutexLocker lock(&mutex_);
-    if (position_ <= 1e-9) {
-        // Already fully closed
-        return;
-    }
     startAction(false);
 }
 
@@ -109,6 +100,12 @@ bool ValveSimulator::isRunning() const
 // ============================================================================
 void ValveSimulator::startAction(bool opening)
 {
+    QMutexLocker lock(&mutex_);
+
+    // Already at target position — nothing to do
+    if (opening && position_ >= 1.0 - 1e-9) return;
+    if (!opening && position_ <= 1e-9) return;
+
     opening_ = opening;
     elapsed_time_ = 0.0;
     phase_elapsed_ = 0.0;
@@ -150,9 +147,9 @@ void ValveSimulator::onTick()
     case ValveState::STARTING_CLOSE:
     {
         if (phase_elapsed_ <= params_.startup_time) {
-            // Ramp current from 0 → startup_current
-            double frac = phase_elapsed_ / params_.startup_time;
-            current_ = params_.startup_current * frac;
+            // Parabolic ramp: f(t) = 2*t/T - (t/T)²  → concave-down curve
+            double f = phase_elapsed_ / params_.startup_time;
+            current_ = params_.startup_current * (2.0 * f - f * f);
         } else {
             // Startup finished — drop to running current and begin moving
             current_ = params_.running_current;
@@ -188,21 +185,20 @@ void ValveSimulator::onTick()
         break;
     }
 
-    // --- STALLING phase (0.3 s ramp to stall current) ---------------------
+    // --- STALLING phase (0.3 s parabolic ramp to stall current) ----------
     case ValveState::STALLING_OPEN:
     case ValveState::STALLING_CLOSE:
     {
         const double STALL_DURATION = 0.3;
         if (phase_elapsed_ <= STALL_DURATION) {
-            double frac = phase_elapsed_ / STALL_DURATION;
+            // Parabolic ramp: concave-down curve
+            double f = phase_elapsed_ / STALL_DURATION;
             current_ = params_.running_current
-                       + (params_.stall_current - params_.running_current) * frac;
+                       + (params_.stall_current - params_.running_current) * (2.0 * f - f * f);
         } else {
             current_ = params_.stall_current;
-            // Stay at limit — don't transition to IDLE automatically
-            // (valve stays energized at the endpoint until user stops)
-            // But stop ticking new data
-            tick_timer_->stop();
+            // Timer keeps running — time accumulates, waveform scrolls
+            // Only stopValve() stops the timer
         }
         break;
     }

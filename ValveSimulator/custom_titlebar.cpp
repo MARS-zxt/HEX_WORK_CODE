@@ -64,7 +64,7 @@ void TrafficLightButton::paintEvent(QPaintEvent *)
     }
 }
 
-void TrafficLightButton::enterEvent(QEvent *)
+void TrafficLightButton::enterEvent(QEnterEvent *)
 {
     hovered_ = true;
     update();

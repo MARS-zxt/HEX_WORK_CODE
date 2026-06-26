@@ -16,14 +16,35 @@ void WaveformChart::setData(const QVector<DataPoint> &data)
 {
     data_ = data;
     autoScaleY();
+    updateXAxis();
     update();
 }
 
 void WaveformChart::clearData()
 {
     data_.clear();
+    x_min_ = 0.0;
+    x_max_ = 10.0;
     y_max_ = 50.0;
     update();
+}
+
+void WaveformChart::updateXAxis()
+{
+    if (data_.isEmpty()) {
+        x_min_ = 0.0;
+        x_max_ = 10.0;
+        return;
+    }
+    double lastTime = data_.last().time;
+    if (lastTime <= 10.0) {
+        x_min_ = 0.0;
+        x_max_ = 10.0;
+    } else {
+        // Scroll: show the most recent 10-second window
+        x_max_ = lastTime;
+        x_min_ = x_max_ - 10.0;
+    }
 }
 
 void WaveformChart::setDarkMode(bool dark)
@@ -106,10 +127,11 @@ void WaveformChart::paintEvent(QPaintEvent *)
         p.drawText(labelRect, Qt::AlignRight | Qt::AlignVCenter, QString("%1").arg(val, 0, 'f', 0));
     }
 
-    // X axis: 11 divisions (0..10, step 1.0)
+    // X axis: 11 divisions, scrolling window [x_min_, x_max_]
     int xDivs = 10;
+    double xRange = x_max_ - x_min_;
     for (int i = 0; i <= xDivs; ++i) {
-        double val = x_max_ * i / xDivs;
+        double val = x_min_ + xRange * i / xDivs;
         int x = plotArea.left() + static_cast<int>(plotArea.width() * i / xDivs);
 
         p.setPen(QPen(gridColor, 1, Qt::DotLine));
@@ -149,9 +171,10 @@ void WaveformChart::paintEvent(QPaintEvent *)
     bool firstPoint = true;
 
     for (const auto &dp : data_) {
-        if (dp.time > x_max_) break; // don't draw beyond x max
+        if (dp.time < x_min_) continue; // skip before visible window
+        if (dp.time > x_max_) break;    // beyond visible window
 
-        double px = plotArea.left() + (dp.time / x_max_) * plotArea.width();
+        double px = plotArea.left() + ((dp.time - x_min_) / (x_max_ - x_min_)) * plotArea.width();
         double py = plotArea.bottom() - ((dp.current - y_min_) / (y_max_ - y_min_)) * plotArea.height();
         py = qBound(static_cast<double>(plotArea.top() - 50), py,
                     static_cast<double>(plotArea.bottom() + 50));
@@ -173,8 +196,9 @@ void WaveformChart::paintEvent(QPaintEvent *)
     // Fill under curve
     if (!data_.isEmpty()) {
         QPainterPath fillPath = path;
-        double lastX = plotArea.left() + (data_.last().time / x_max_) * plotArea.width();
-        fillPath.lineTo(lastX, plotArea.bottom());
+        double lastVisibleX = qMin(data_.last().time, x_max_);
+        double lastPx = plotArea.left() + ((lastVisibleX - x_min_) / (x_max_ - x_min_)) * plotArea.width();
+        fillPath.lineTo(lastPx, plotArea.bottom());
         fillPath.lineTo(plotArea.left(), plotArea.bottom());
         fillPath.closeSubpath();
 

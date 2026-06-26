@@ -2,7 +2,7 @@
 #define MAIN_WINDOW_H
 
 #include <QWidget>
-#include <QTabWidget>
+#include <QSplitter>
 #include <QTcpServer>
 #include <QTcpSocket>
 
@@ -58,10 +58,7 @@ private:
     // Title bar
     CustomTitleBar *title_bar_ = nullptr;
 
-    // Tabs
-    QTabWidget *tab_widget_ = nullptr;
-
-    // Valve tab
+    // Valve panel
     ValveDisplay  *valve_display_  = nullptr;
     WaveformChart *waveform_chart_ = nullptr;
 

@@ -10,6 +10,7 @@
 #include <QGraphicsDropShadowEffect>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QSplitter>
 
 // ============================================================================
 // Construction
@@ -82,41 +83,12 @@ void MainWindow::setupUi()
     // --- Separator ---
     // (handled in title bar paint)
 
-    // --- Tab widget ---
-    tab_widget_ = new QTabWidget(contentWidget);
-    tab_widget_->setStyleSheet(
-        "QTabWidget::pane {"
-        "  border: none;"
-        "  background: #F5F5F5;"
-        "}"
-        "QTabBar::tab {"
-        "  background: #E8E8E8;"
-        "  border: 1px solid #D0D0D0;"
-        "  border-bottom: none;"
-        "  border-top-left-radius: 6px;"
-        "  border-top-right-radius: 6px;"
-        "  padding: 8px 24px;"
-        "  margin-right: 2px;"
-        "  font-size: 13px;"
-        "  color: #666;"
-        "}"
-        "QTabBar::tab:selected {"
-        "  background: #F5F5F5;"
-        "  color: #2070C0;"
-        "  font-weight: bold;"
-        "  border-bottom: 2px solid #3080F0;"
-        "}"
-        "QTabBar::tab:hover:!selected {"
-        "  background: #F0F0F0;"
-        "  color: #444;"
-        "}");
-
     // =====================================================================
-    // Tab 1: Virtual Valve
+    // Left panel: Virtual Valve
     // =====================================================================
     auto *valveTab = new QWidget();
     auto *valveTabLayout = new QVBoxLayout(valveTab);
-    valveTabLayout->setContentsMargins(12, 12, 12, 12);
+    valveTabLayout->setContentsMargins(12, 12, 8, 12);
     valveTabLayout->setSpacing(10);
 
     // -- Control buttons row --
@@ -209,15 +181,24 @@ void MainWindow::setupUi()
     chartLayout->addWidget(waveform_chart_);
     valveTabLayout->addWidget(chartGroup, 1);
 
-    tab_widget_->addTab(valveTab, QStringLiteral("  虚拟阀门  "));
-
     // =====================================================================
-    // Tab 2: Test Program
+    // Right panel: Test Program
     // =====================================================================
     test_panel_ = new TestPanel();
-    tab_widget_->addTab(test_panel_, QStringLiteral("  测试程序  "));
+    test_panel_->setMinimumWidth(280);
 
-    contentLayout->addWidget(tab_widget_, 1);
+    // --- Splitter: valve (left) | test (right) ---
+    auto *splitter = new QSplitter(Qt::Horizontal, contentWidget);
+    splitter->addWidget(valveTab);
+    splitter->addWidget(test_panel_);
+    splitter->setStretchFactor(0, 3);  // valve gets more space
+    splitter->setStretchFactor(1, 1);
+    splitter->setHandleWidth(2);
+    splitter->setStyleSheet(
+        "QSplitter::handle { background: #D0D0D0; }"
+        "QSplitter::handle:hover { background: #3080F0; }");
+
+    contentLayout->addWidget(splitter, 1);
 
     // --- Status bar ---
     auto *statusBar = new QWidget(contentWidget);

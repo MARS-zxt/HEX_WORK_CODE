@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(ValveSimulator VERSION 1.0.0 LANGUAGES CXX)
+project(ValveSimulator VERSION 1.0.0 LANGUAGES CXX RC)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -23,6 +23,7 @@ set(SOURCES
     waveform_chart.cpp
     test_panel.cpp
     main_window.cpp
+    app_icon.rc
 )
 
 set(HEADERS
@@ -44,9 +45,10 @@ else()
     target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Widgets Qt5::Network)
 endif()
 
-# Windows: hide console window for release builds
+# Windows: hide console window and set app icon
 if(WIN32)
     set_target_properties(${PROJECT_NAME} PROPERTIES
         WIN32_EXECUTABLE TRUE
+        RC_ICONS "app_icon.ico"
     )
 endif()

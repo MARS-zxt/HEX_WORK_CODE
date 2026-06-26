@@ -93,9 +93,9 @@ void ValveParamsDialog::setupUi(const ValveParams &params)
 
     startup_time_    = makeSpinBox(params.startup_time,    0.1, 10.0, 0.1, 1, " s");
     travel_time_     = makeSpinBox(params.travel_time,     0.1, 60.0, 0.1, 1, " s");
-    running_current_ = makeSpinBox(params.running_current, 1.0, 5000.0, 1.0, 1, " mA");
-    stall_current_   = makeSpinBox(params.stall_current,   1.0, 5000.0, 1.0, 1, " mA");
-    startup_current_ = makeSpinBox(params.startup_current, 1.0, 5000.0, 1.0, 1, " mA");
+    running_current_ = makeSpinBox(params.running_current, 1.0, 5000.0, 1.0, 0, " mA");
+    stall_current_   = makeSpinBox(params.stall_current,   1.0, 5000.0, 1.0, 0, " mA");
+    startup_current_ = makeSpinBox(params.startup_current, 1.0, 5000.0, 1.0, 0, " mA");
 
     auto makeLabel = [&](const QString &text, const QString &tooltip) {
         auto *lbl = new QLabel(text, container);

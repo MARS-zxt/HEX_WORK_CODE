@@ -1,5 +1,6 @@
 #include <QApplication>
 #include <QFile>
+#include <QIcon>
 #include "main_window.h"
 
 int main(int argc, char *argv[])
@@ -10,6 +11,9 @@ int main(int argc, char *argv[])
     app.setApplicationName(QStringLiteral("ValveSimulator"));
     app.setApplicationVersion("1.0.0");
     app.setOrganizationName("ValveSim");
+
+    // Set app icon (taskbar + title bar)
+    app.setWindowIcon(QIcon(":/app_icon.ico"));
 
     // Global default font
     QFont defaultFont = app.font();

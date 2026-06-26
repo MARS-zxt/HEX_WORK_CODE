@@ -26,9 +26,12 @@ private:
     bool dark_mode_ = false;
 
     // Axis limits
-    double x_max_ = 10.0;  // seconds
+    double x_min_ = 0.0;   // left edge (scrolls)
+    double x_max_ = 10.0;  // right edge (x_min_ + 10.0)
     double y_max_ = 50.0;  // mA (auto-scale)
     double y_min_ = 0.0;
+
+    void updateXAxis();
 
     void autoScaleY();
 
