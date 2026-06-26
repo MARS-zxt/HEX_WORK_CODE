@@ -1,0 +1,26 @@
+{
+	"BUILD_DIR" : "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/ValveSimulator_autogen",
+	"CMAKE_BINARY_DIR" : "E:/work_space/HEX_WORK_CODE/ValveSimulator/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "E:/work_space/HEX_WORK_CODE/ValveSimulator/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "E:/work_space/HEX_WORK_CODE/ValveSimulator",
+	"CMAKE_SOURCE_DIR" : "E:/work_space/HEX_WORK_CODE/ValveSimulator",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/ValveSimulator_autogen/include",
+	"INPUTS" : 
+	[
+		"E:/work_space/HEX_WORK_CODE/ValveSimulator/style.qss",
+		"E:/work_space/HEX_WORK_CODE/ValveSimulator/app_icon.ico"
+	],
+	"LOCK_FILE" : "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/ValveSimulator_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "C:/Qt/6.11.1/msvc2022_64/bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/ValveSimulator_autogen.dir/AutoRcc_resources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "E:/work_space/HEX_WORK_CODE/ValveSimulator/resources.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

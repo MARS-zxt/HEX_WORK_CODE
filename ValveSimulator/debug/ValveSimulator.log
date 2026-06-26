@@ -1,0 +1,27 @@
+﻿   Qt/MSBuild: 3.5.0.0
+   Qt: 6.11.1
+  custom_titlebar.cpp
+  main.cpp
+  main_window.cpp
+  valve_simulator.cpp
+E:\work_space\HEX_WORK_CODE\ValveSimulator\valve_simulator.cpp(121,5): error C2065: “lock”: 未声明的标识符
+E:\work_space\HEX_WORK_CODE\ValveSimulator\custom_titlebar.h(21,10): error C3668: “TrafficLightButton::enterEvent”: 包含重写说明符“override”的方法没有重写任何基类方法
+  (编译源文件“custom_titlebar.cpp”)
+  
+E:\work_space\HEX_WORK_CODE\ValveSimulator\custom_titlebar.h(21,10): error C3668: “TrafficLightButton::enterEvent”: 包含重写说明符“override”的方法没有重写任何基类方法
+  (编译源文件“main_window.cpp”)
+  
+C:\Qt\6.11.1\msvc2022_64\include\QtGui\qguiapplication.h(168,10): warning C4996: 'QCoreApplication::compressEvent': This feature will be removed in Qt 7
+  (编译源文件“custom_titlebar.cpp”)
+  
+C:\Qt\6.11.1\msvc2022_64\include\QtGui\qguiapplication.h(168,10): warning C4996: 'QCoreApplication::compressEvent': This feature will be removed in Qt 7
+  (编译源文件“main.cpp”)
+  
+C:\Qt\6.11.1\msvc2022_64\include\QtWidgets\qapplication.h(146,10): warning C4996: 'QGuiApplication::compressEvent': This feature will be removed in Qt 7
+  (编译源文件“main.cpp”)
+  
+E:\work_space\HEX_WORK_CODE\ValveSimulator\custom_titlebar.cpp(141,34): warning C4996: 'QMouseEvent::globalPos': Use globalPosition()
+E:\work_space\HEX_WORK_CODE\ValveSimulator\custom_titlebar.cpp(149,31): warning C4996: 'QMouseEvent::globalPos': Use globalPosition()
+E:\work_space\HEX_WORK_CODE\ValveSimulator\custom_titlebar.h(21,10): error C3668: “TrafficLightButton::enterEvent”: 包含重写说明符“override”的方法没有重写任何基类方法
+  (编译源文件“main.cpp”)
+  
