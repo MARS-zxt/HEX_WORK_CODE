@@ -1,0 +1,19 @@
+# ninja log v7
+15	999	8041583918386954	ValveSimulator_autogen/timestamp	4a506ba636bc8caf
+15	999	8041583918386954	ValveSimulator_autogen/mocs_compilation.cpp	4a506ba636bc8caf
+15	999	8041583918386954	E:/work_space/HEX_WORK_CODE/ValveSimulator/out/build/debug/ValveSimulator_autogen/timestamp	4a506ba636bc8caf
+15	999	8041583918386954	E:/work_space/HEX_WORK_CODE/ValveSimulator/out/build/debug/ValveSimulator_autogen/mocs_compilation.cpp	4a506ba636bc8caf
+1005	1240	8041583920765460	ValveSimulator_autogen/EWIEGA46WW/qrc_resources.cpp	1851cd9ad2037c3d
+1005	1240	8041583920765460	E:/work_space/HEX_WORK_CODE/ValveSimulator/out/build/debug/ValveSimulator_autogen/EWIEGA46WW/qrc_resources.cpp	1851cd9ad2037c3d
+1350	1963	8041583922724486	CMakeFiles/ValveSimulator.dir/app_icon.rc.res	9de18fe3c275571b
+1438	1981	8041583923606155	CMakeFiles/ValveSimulator.dir/ValveSimulator_autogen/EWIEGA46WW/qrc_resources.cpp.obj	88df82122cb7a101
+1328	4742	8041583922511407	CMakeFiles/ValveSimulator.dir/test_panel.cpp.obj	8b78217212e63b16
+1257	6238	8041583921794399	CMakeFiles/ValveSimulator.dir/main.cpp.obj	4e75b76f228d97ef
+1240	7679	8041583921627328	CMakeFiles/ValveSimulator.dir/ValveSimulator_autogen/mocs_compilation.cpp.obj	38195070ea6e6ce4
+1316	7689	8041583922386780	CMakeFiles/ValveSimulator.dir/waveform_chart.cpp.obj	d51f3efbfb7c752
+1296	7785	8041583922184653	CMakeFiles/ValveSimulator.dir/valve_display.cpp.obj	ef72a588cac786bc
+1306	7855	8041583922290087	CMakeFiles/ValveSimulator.dir/valve_params_dialog.cpp.obj	c8fb4f7d4519608c
+1276	7993	8041583921990936	CMakeFiles/ValveSimulator.dir/custom_titlebar.cpp.obj	71414b3c616deaa9
+1266	8057	8041583921885527	CMakeFiles/ValveSimulator.dir/valve_simulator.cpp.obj	4f907bc6cee36e5d
+1339	8293	8041583922615682	CMakeFiles/ValveSimulator.dir/main_window.cpp.obj	9b95ae38a8e7d7ff
+8296	9192	8041583992192432	ValveSimulator.exe	1029b1283d409885

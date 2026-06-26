@@ -93,6 +93,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="app_icon.ico">
+      <Filter>Resource Files</Filter>
+    </None>
     <QtRcc Include="resources.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>

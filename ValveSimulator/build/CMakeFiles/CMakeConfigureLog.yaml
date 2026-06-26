@@ -63,8 +63,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-04s45u"
-      binary: "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-04s45u"
+      source: "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-9wct6j"
+      binary: "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-9wct6j"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -74,11 +74,11 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-04s45u'
+        Change Dir: 'E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-9wct6j'
         
-        Run Build Command(s): C:/Qt/Tools/Ninja/ninja.exe -v cmTC_5eadb
-        [1/2] D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_5eadb.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_5eadb.dir\\ /FS -c C:\\Qt\\Tools\\CMake_64\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_5eadb.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_5eadb.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_5eadb.exe /implib:cmTC_5eadb.lib /pdb:cmTC_5eadb.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/Qt/Tools/Ninja/ninja.exe -v cmTC_6fd9d
+        [1/2] D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_6fd9d.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_6fd9d.dir\\ /FS -c C:\\Qt\\Tools\\CMake_64\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_6fd9d.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_6fd9d.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_6fd9d.exe /implib:cmTC_6fd9d.lib /pdb:cmTC_6fd9d.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -122,8 +122,8 @@ events:
       - "C:/Qt/6.11.1/msvc2022_64/lib/cmake/Qt6/Qt6Config.cmake:192 (include)"
       - "CMakeLists.txt:9 (find_package)"
     directories:
-      source: "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-ie7dp6"
-      binary: "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-ie7dp6"
+      source: "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-45egxw"
+      binary: "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-45egxw"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -133,13 +133,13 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-ie7dp6'
+        Change Dir: 'E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-45egxw'
         
-        Run Build Command(s): C:/Qt/Tools/Ninja/ninja.exe -v cmTC_ad397
-        [1/2] D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_ad397.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_ad397.dir\\ /FS -c E:\\work_space\\HEX_WORK_CODE\\ValveSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ie7dp6\\src.cxx
-        FAILED: CMakeFiles/cmTC_ad397.dir/src.cxx.obj 
-        D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_ad397.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_ad397.dir\\ /FS -c E:\\work_space\\HEX_WORK_CODE\\ValveSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ie7dp6\\src.cxx
-        E:\\work_space\\HEX_WORK_CODE\\ValveSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ie7dp6\\src.cxx(1): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
+        Run Build Command(s): C:/Qt/Tools/Ninja/ninja.exe -v cmTC_95365
+        [1/2] D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_95365.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_95365.dir\\ /FS -c E:\\work_space\\HEX_WORK_CODE\\ValveSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-45egxw\\src.cxx
+        FAILED: CMakeFiles/cmTC_95365.dir/src.cxx.obj 
+        D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_95365.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_95365.dir\\ /FS -c E:\\work_space\\HEX_WORK_CODE\\ValveSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-45egxw\\src.cxx
+        E:\\work_space\\HEX_WORK_CODE\\ValveSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-45egxw\\src.cxx(1): fatal error C1083: 无法打开包括文件: “pthread.h”: No such file or directory
         ninja: build stopped: subcommand failed.
         
       exitCode: 1
@@ -155,8 +155,8 @@ events:
       - "C:/Qt/6.11.1/msvc2022_64/lib/cmake/Qt6/Qt6Config.cmake:192 (include)"
       - "CMakeLists.txt:9 (find_package)"
     directories:
-      source: "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-lluvbt"
-      binary: "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-lluvbt"
+      source: "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-6zn9hh"
+      binary: "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-6zn9hh"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -166,14 +166,14 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-lluvbt'
+        Change Dir: 'E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-6zn9hh'
         
-        Run Build Command(s): C:/Qt/Tools/Ninja/ninja.exe -v cmTC_f45df
-        [1/2] D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc -DCHECK_FUNCTION_EXISTS=pthread_create /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_f45df.dir\\CheckFunctionExists.cxx.obj /FdCMakeFiles\\cmTC_f45df.dir\\ /FS -c E:\\work_space\\HEX_WORK_CODE\\ValveSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lluvbt\\CheckFunctionExists.cxx
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_f45df.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_f45df.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_f45df.exe /implib:cmTC_f45df.lib /pdb:cmTC_f45df.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        FAILED: cmTC_f45df.exe 
-        C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_f45df.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_f45df.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_f45df.exe /implib:cmTC_f45df.lib /pdb:cmTC_f45df.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        LINK Pass 1: command "D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_f45df.dir\\CheckFunctionExists.cxx.obj /out:cmTC_f45df.exe /implib:cmTC_f45df.lib /pdb:cmTC_f45df.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_f45df.dir/intermediate.manifest CMakeFiles\\cmTC_f45df.dir/manifest.res" failed (exit code 1104) with the following output:
+        Run Build Command(s): C:/Qt/Tools/Ninja/ninja.exe -v cmTC_4e643
+        [1/2] D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc -DCHECK_FUNCTION_EXISTS=pthread_create /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_4e643.dir\\CheckFunctionExists.cxx.obj /FdCMakeFiles\\cmTC_4e643.dir\\ /FS -c E:\\work_space\\HEX_WORK_CODE\\ValveSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6zn9hh\\CheckFunctionExists.cxx
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_4e643.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_4e643.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_4e643.exe /implib:cmTC_4e643.lib /pdb:cmTC_4e643.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        FAILED: cmTC_4e643.exe 
+        C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_4e643.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_4e643.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_4e643.exe /implib:cmTC_4e643.lib /pdb:cmTC_4e643.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        LINK Pass 1: command "D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_4e643.dir\\CheckFunctionExists.cxx.obj /out:cmTC_4e643.exe /implib:cmTC_4e643.lib /pdb:cmTC_4e643.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_4e643.dir/intermediate.manifest CMakeFiles\\cmTC_4e643.dir/manifest.res" failed (exit code 1104) with the following output:
         LINK : fatal error LNK1104: 无法打开文件“pthreads.lib”\x0d
         ninja: build stopped: subcommand failed.
         
@@ -190,8 +190,8 @@ events:
       - "C:/Qt/6.11.1/msvc2022_64/lib/cmake/Qt6/Qt6Config.cmake:192 (include)"
       - "CMakeLists.txt:9 (find_package)"
     directories:
-      source: "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-hzi41q"
-      binary: "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-hzi41q"
+      source: "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-3ikeem"
+      binary: "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-3ikeem"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -201,14 +201,14 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-hzi41q'
+        Change Dir: 'E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-3ikeem'
         
-        Run Build Command(s): C:/Qt/Tools/Ninja/ninja.exe -v cmTC_636ff
-        [1/2] D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc -DCHECK_FUNCTION_EXISTS=pthread_create /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_636ff.dir\\CheckFunctionExists.cxx.obj /FdCMakeFiles\\cmTC_636ff.dir\\ /FS -c E:\\work_space\\HEX_WORK_CODE\\ValveSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hzi41q\\CheckFunctionExists.cxx
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_636ff.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_636ff.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_636ff.exe /implib:cmTC_636ff.lib /pdb:cmTC_636ff.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        FAILED: cmTC_636ff.exe 
-        C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_636ff.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_636ff.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_636ff.exe /implib:cmTC_636ff.lib /pdb:cmTC_636ff.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        LINK Pass 1: command "D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_636ff.dir\\CheckFunctionExists.cxx.obj /out:cmTC_636ff.exe /implib:cmTC_636ff.lib /pdb:cmTC_636ff.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_636ff.dir/intermediate.manifest CMakeFiles\\cmTC_636ff.dir/manifest.res" failed (exit code 1104) with the following output:
+        Run Build Command(s): C:/Qt/Tools/Ninja/ninja.exe -v cmTC_6dd8b
+        [1/2] D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /GR /EHsc -DCHECK_FUNCTION_EXISTS=pthread_create /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_6dd8b.dir\\CheckFunctionExists.cxx.obj /FdCMakeFiles\\cmTC_6dd8b.dir\\ /FS -c E:\\work_space\\HEX_WORK_CODE\\ValveSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3ikeem\\CheckFunctionExists.cxx
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_6dd8b.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_6dd8b.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_6dd8b.exe /implib:cmTC_6dd8b.lib /pdb:cmTC_6dd8b.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        FAILED: cmTC_6dd8b.exe 
+        C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_6dd8b.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_6dd8b.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_6dd8b.exe /implib:cmTC_6dd8b.lib /pdb:cmTC_6dd8b.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        LINK Pass 1: command "D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_6dd8b.dir\\CheckFunctionExists.cxx.obj /out:cmTC_6dd8b.exe /implib:cmTC_6dd8b.lib /pdb:cmTC_6dd8b.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_6dd8b.dir/intermediate.manifest CMakeFiles\\cmTC_6dd8b.dir/manifest.res" failed (exit code 1104) with the following output:
         LINK : fatal error LNK1104: 无法打开文件“pthread.lib”\x0d
         ninja: build stopped: subcommand failed.
         
@@ -232,8 +232,8 @@ events:
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-t612ky"
-      binary: "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-t612ky"
+      source: "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-l58smb"
+      binary: "E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-l58smb"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -243,11 +243,11 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: 'E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-t612ky'
+        Change Dir: 'E:/work_space/HEX_WORK_CODE/ValveSimulator/build/CMakeFiles/CMakeScratch/TryCompile-l58smb'
         
-        Run Build Command(s): C:/Qt/Tools/Ninja/ninja.exe -v cmTC_462e3
-        [1/2] D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DHAVE_STDATOMIC  /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_462e3.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_462e3.dir\\ /FS -c E:\\work_space\\HEX_WORK_CODE\\ValveSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t612ky\\src.cxx
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_462e3.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_462e3.dir\\src.cxx.obj  /out:cmTC_462e3.exe /implib:cmTC_462e3.lib /pdb:cmTC_462e3.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/Qt/Tools/Ninja/ninja.exe -v cmTC_bb663
+        [1/2] D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DHAVE_STDATOMIC  /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_bb663.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_bb663.dir\\ /FS -c E:\\work_space\\HEX_WORK_CODE\\ValveSimulator\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l58smb\\src.cxx
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_bb663.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- D:\\vv_ss\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_bb663.dir\\src.cxx.obj  /out:cmTC_bb663.exe /implib:cmTC_bb663.lib /pdb:cmTC_bb663.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
 ...

@@ -226,6 +226,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="app_icon.ico" />
     <QtRcc Include="resources.qrc" />
     <None Include="style.qss" />
   </ItemGroup>
