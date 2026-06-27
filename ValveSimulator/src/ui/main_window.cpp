@@ -323,6 +323,25 @@ void MainWindow::processTcpCommand(const QString &cmd, QTcpSocket *client)
             client->write("ERROR invalid SET_PARAMS format\n");
         }
     }
+    else if (cmd.startsWith("SET_DATA")) {
+        // Format: SET_DATA key1=value1 key2=value2 ...
+        // Keys: open_time open_upper open_lower close_time close_upper close_lower
+        auto parts = cmd.split(' ');
+        for (int i = 1; i < parts.size(); ++i) {
+            auto kv = parts[i].split('=');
+            if (kv.size() != 2) continue;
+            QString key = kv[0];
+            double  val = kv[1].toDouble();
+
+            if (key == "open_time")        test_panel_->setOpenSmallTravelTime(val);
+            else if (key == "open_upper")  test_panel_->setOpenCurrentUpper(val);
+            else if (key == "open_lower")  test_panel_->setOpenCurrentLower(val);
+            else if (key == "close_time")  test_panel_->setCloseSmallTravelTime(val);
+            else if (key == "close_upper") test_panel_->setCloseCurrentUpper(val);
+            else if (key == "close_lower") test_panel_->setCloseCurrentLower(val);
+        }
+        client->write("OK SET_DATA\n");
+    }
     else {
         client->write(QString("ERROR unknown command: %1\n").arg(cmd).toUtf8());
     }

@@ -184,6 +184,34 @@ int valve_set_params(ValveClient *client, const ValveParamsC *params)
 }
 
 // ============================================================================
+int valve_set_data(ValveClient *client, const TestResultData *data)
+{
+    char cmd[512];
+    cmd[0] = '\0';
+    char *p = cmd;
+    int remaining = sizeof(cmd);
+
+    p += snprintf(p, remaining, "SET_DATA");
+    remaining = sizeof(cmd) - (p - cmd);
+
+    if (data->open_time  > 0.0) p += snprintf(p, remaining, " open_time=%.2f",  data->open_time);
+    remaining = sizeof(cmd) - (p - cmd);
+    if (data->open_upper > 0.0) p += snprintf(p, remaining, " open_upper=%.1f", data->open_upper);
+    remaining = sizeof(cmd) - (p - cmd);
+    if (data->open_lower > 0.0) p += snprintf(p, remaining, " open_lower=%.1f", data->open_lower);
+    remaining = sizeof(cmd) - (p - cmd);
+    if (data->close_time  > 0.0) p += snprintf(p, remaining, " close_time=%.2f",  data->close_time);
+    remaining = sizeof(cmd) - (p - cmd);
+    if (data->close_upper > 0.0) p += snprintf(p, remaining, " close_upper=%.1f", data->close_upper);
+    remaining = sizeof(cmd) - (p - cmd);
+    if (data->close_lower > 0.0) p += snprintf(p, remaining, " close_lower=%.1f", data->close_lower);
+
+    char resp[256];
+    if (send_and_recv(client, cmd, resp, sizeof(resp)) < 0) return -1;
+    return (strncmp(resp, "OK", 2) == 0) ? 0 : -1;
+}
+
+// ============================================================================
 int valve_send_command(ValveClient *client, const char *cmd, char *response, int resp_size)
 {
     return send_and_recv(client, cmd, response, resp_size);

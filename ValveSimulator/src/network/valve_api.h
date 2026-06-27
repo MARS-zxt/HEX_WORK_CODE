@@ -122,6 +122,26 @@ int valve_get_data(ValveClient *client, ValveData *data);
 int valve_set_params(ValveClient *client, const ValveParamsC *params);
 
 // ============================================================================
+// Test data output
+// ============================================================================
+
+typedef struct {
+    double open_time;       // 开阀到位时间 (s)  — 传 0 表示不更新此字段
+    double open_upper;      // 开阀电流上限 (mA)
+    double open_lower;      // 开阀电流下限 (mA)
+    double close_time;      // 关阀到位时间 (s)
+    double close_upper;     // 关阀电流上限 (mA)
+    double close_lower;     // 关阀电流下限 (mA)
+} TestResultData;
+
+/**
+ * Send test result data to the simulator's UI display.
+ * Fields with value 0.0 are skipped (not updated).
+ * Returns 0 on success.
+ */
+int valve_set_data(ValveClient *client, const TestResultData *data);
+
+// ============================================================================
 // Low-level (for advanced use)
 // ============================================================================
 

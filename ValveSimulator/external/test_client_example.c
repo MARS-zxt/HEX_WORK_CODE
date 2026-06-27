@@ -15,20 +15,24 @@
  * 在此文件中编写你自己的阀门控制逻辑。
  */
 
+#include "valve_api.h"           // 必须在 windows.h 之前，避免 winsock 冲突
+
 #include <stdio.h>
 #include <stdlib.h>
 #ifdef _WIN32
+    #define WIN32_LEAN_AND_MEAN    // 阻止 windows.h 引入 winsock.h 和多余组件
     #include <windows.h>
     #define SLEEP_MS(ms) Sleep(ms)
 #else
     #include <unistd.h>
     #define SLEEP_MS(ms) usleep((ms) * 1000)
 #endif
-#include "valve_api.h"
 
 int main(void)
 {
     ValveClient client;
+    ValveData data;
+    TestResultData result;
     valve_init(&client);
 
     printf("连接到阀门模拟器...\n");
@@ -62,19 +66,34 @@ int main(void)
     //    ValveParamsC params = {1.0, 3.0, 150.0, 400.0, 250.0};
     //    valve_set_params(&client, &params);
     //
+    //  测试数据输出到 UI 面板:
+    //    TestResultData result;
+    //    result.open_time  = 2.20;
+    //    result.open_upper = 150.0;
+    //    result.open_lower = 0.0;
+    //    result.close_time  = 2.40;
+    //    result.close_upper = 140.0;
+    //    result.close_lower = 0.0;
+    //    valve_set_data(&client, &result);  // 更新 UI 上的 6 个数据字段
+    //
     //  定时:
     //    SLEEP_MS(100);    100ms 延迟
     //
     // ============================================================
 
-    // 示例: 开阀 → 200ms 后查状态 → 停止
+    // 示例: 开阀 → 200ms 后查状态 → 输出结果到 UI → 停止
     valve_open(&client);
     SLEEP_MS(200);
 
-    ValveData data;
     valve_get_data(&client, &data);
     printf("time=%.1fs current=%.1fmA position=%.3f state=%d\n",
            data.elapsed_time, data.current, data.position, data.state);
+
+    // 将测试结果写入模拟器 UI 的数据展示面板
+    result.open_time  = 0.20;
+    result.open_upper = 36.0;
+    result.open_lower = 0.0;
+    valve_set_data(&client, &result);
 
     valve_stop(&client);
 
