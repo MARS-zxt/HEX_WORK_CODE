@@ -13,6 +13,11 @@ metadata:
 3. **用 skill 而非重复解释**：5 个 skill 覆盖了 90% 的开发场景（qt-cmake/qml-coding/qt-cpp-review/qt-cpp-doc/commit）
 4. **Memory 文件缓存上下文**：架构、构建、踩坑等关键信息持久化，避免每次重新理解
 
+### 版本控制铁律
+- **每次稳定优化完成后必须 commit + push**：git 用户 `zxt`，分支 `main`，远程 `origin` (github.com:MARS-zxt/HEX_WORK_CODE.git)
+- 提交风格：中文简短描述，如"项目优化：xxx"
+- 不提交构建产物（build/debug/release/.vs/installer），仅提交源码和配置文件
+
 ### Token 节省规则（每次开发默认遵守）
 
 | 规则 | 说明 |
