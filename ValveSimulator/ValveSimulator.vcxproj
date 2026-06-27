@@ -85,7 +85,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;release;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;src/core;src/ui;src/network;release;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8 -w34100 -w34189 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>release\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
@@ -147,7 +147,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;debug;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;src/core;src/ui;src/network;debug;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8 -w34100 -w34189 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>debug\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
@@ -204,34 +204,38 @@
     </QtRcc>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="custom_titlebar.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="main_window.cpp" />
-    <ClCompile Include="test_panel.cpp" />
-    <ClCompile Include="valve_display.cpp" />
-    <ClCompile Include="valve_params_dialog.cpp" />
-    <ClCompile Include="valve_simulator.cpp" />
-    <ClCompile Include="waveform_chart.cpp" />
+    <ClCompile Include="src\core\valve_simulator.cpp" />
+    <ClCompile Include="src\ui\main.cpp" />
+    <ClCompile Include="src\ui\main_window.cpp" />
+    <ClCompile Include="src\ui\test_panel.cpp" />
+    <ClCompile Include="src\ui\valve_display.cpp" />
+    <ClCompile Include="src\ui\valve_params_dialog.cpp" />
+    <ClCompile Include="src\ui\version_dialog.cpp" />
+    <ClCompile Include="src\ui\custom_titlebar.cpp" />
+    <ClCompile Include="src\ui\waveform_chart.cpp" />
+    <ClCompile Include="src\network\valve_api.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="custom_titlebar.h" />
-    <QtMoc Include="main_window.h" />
-    <QtMoc Include="test_panel.h" />
-    <ClInclude Include="valve_api.h" />
-    <QtMoc Include="valve_display.h" />
-    <QtMoc Include="valve_params_dialog.h" />
-    <QtMoc Include="valve_simulator.h" />
-    <ClInclude Include="valve_types.h" />
-    <QtMoc Include="waveform_chart.h" />
+    <QtMoc Include="src\ui\custom_titlebar.h" />
+    <QtMoc Include="src\ui\main_window.h" />
+    <QtMoc Include="src\ui\test_panel.h" />
+    <QtMoc Include="src\ui\valve_display.h" />
+    <QtMoc Include="src\ui\valve_params_dialog.h" />
+    <QtMoc Include="src\ui\version_dialog.h" />
+    <QtMoc Include="src\core\valve_simulator.h" />
+    <QtMoc Include="src\ui\waveform_chart.h" />
+    <ClInclude Include="src\core\valve_types.h" />
+    <ClInclude Include="src\core\version.h" />
+    <ClInclude Include="src\network\valve_api.h" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="app_icon.ico" />
-    <QtRcc Include="resources.qrc" />
-    <None Include="style.qss" />
+    <None Include="resources\app_icon.ico" />
+    <QtRcc Include="resources\resources.qrc" />
+    <None Include="resources\style.qss" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include=".\ValveSimulator_resource.rc" />
+    <ResourceCompile Include="resources\ValveSimulator_resource.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <Import Project="$(QtMsBuild)\qt.targets" Condition="Exists('$(QtMsBuild)\qt.targets')" />

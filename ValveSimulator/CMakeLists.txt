@@ -14,30 +14,64 @@ else()
     set(QT_VERSION_MAJOR 6)
 endif()
 
+# ============================================================================
+# Sources — organized by module
+# ============================================================================
+set(CORE_SOURCES
+    src/core/valve_simulator.cpp
+)
+
+set(UI_SOURCES
+    src/ui/main.cpp
+    src/ui/main_window.cpp
+    src/ui/custom_titlebar.cpp
+    src/ui/valve_display.cpp
+    src/ui/valve_params_dialog.cpp
+    src/ui/version_dialog.cpp
+    src/ui/waveform_chart.cpp
+    src/ui/test_panel.cpp
+)
+
+set(NETWORK_SOURCES
+    src/network/valve_api.cpp
+)
+
+set(RESOURCE_SOURCES
+    resources/app_icon.rc
+)
+
 set(SOURCES
-    main.cpp
-    valve_simulator.cpp
-    custom_titlebar.cpp
-    valve_display.cpp
-    valve_params_dialog.cpp
-    waveform_chart.cpp
-    test_panel.cpp
-    main_window.cpp
-    app_icon.rc
+    ${CORE_SOURCES}
+    ${UI_SOURCES}
+    ${NETWORK_SOURCES}
+    ${RESOURCE_SOURCES}
 )
 
 set(HEADERS
-    valve_types.h
-    valve_simulator.h
-    custom_titlebar.h
-    valve_display.h
-    valve_params_dialog.h
-    waveform_chart.h
-    test_panel.h
-    main_window.h
+    src/core/valve_types.h
+    src/core/version.h
+    src/core/valve_simulator.h
+    src/ui/main_window.h
+    src/ui/custom_titlebar.h
+    src/ui/valve_display.h
+    src/ui/valve_params_dialog.h
+    src/ui/version_dialog.h
+    src/ui/waveform_chart.h
+    src/ui/test_panel.h
+    src/network/valve_api.h
 )
 
-add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS} resources.qrc)
+# ============================================================================
+# Target
+# ============================================================================
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS} resources/resources.qrc)
+
+# Include paths — preserve flat #include style (e.g. #include "valve_simulator.h")
+target_include_directories(${PROJECT_NAME} PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/core
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ui
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/network
+)
 
 if(QT_VERSION_MAJOR EQUAL 6)
     target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets Qt6::Network)
@@ -49,6 +83,6 @@ endif()
 if(WIN32)
     set_target_properties(${PROJECT_NAME} PROPERTIES
         WIN32_EXECUTABLE TRUE
-        RC_ICONS "app_icon.ico"
+        RC_ICONS "resources/app_icon.ico"
     )
 endif()

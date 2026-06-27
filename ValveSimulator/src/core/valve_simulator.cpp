@@ -144,19 +144,42 @@ void ValveSimulator::onTick()
 
     // --- STARTING phase ---------------------------------------------------
     case ValveState::STARTING_OPEN:
-    case ValveState::STARTING_CLOSE:
     {
         if (phase_elapsed_ <= params_.startup_time) {
             // Parabolic ramp: f(t) = 2*t/T - (t/T)²  → concave-down curve
             double f = phase_elapsed_ / params_.startup_time;
             current_ = params_.startup_current * (2.0 * f - f * f);
         } else {
-            // Startup finished — drop to running current and begin moving
+            // Startup finished — drop to running current
             current_ = params_.running_current;
             phase_elapsed_ = 0.0;
-            state_ = (state_ == ValveState::STARTING_OPEN)
-                         ? ValveState::MOVING_OPEN
-                         : ValveState::MOVING_CLOSE;
+            state_ = ValveState::MOVING_OPEN;
+        }
+        // Position: start moving immediately, even during startup
+        position_ += dt / params_.travel_time;
+        if (position_ >= 1.0) {
+            position_ = 1.0;
+            phase_elapsed_ = 0.0;
+            state_ = ValveState::STALLING_OPEN;
+        }
+        break;
+    }
+    case ValveState::STARTING_CLOSE:
+    {
+        if (phase_elapsed_ <= params_.startup_time) {
+            double f = phase_elapsed_ / params_.startup_time;
+            current_ = params_.startup_current * (2.0 * f - f * f);
+        } else {
+            current_ = params_.running_current;
+            phase_elapsed_ = 0.0;
+            state_ = ValveState::MOVING_CLOSE;
+        }
+        // Position: start moving immediately, even during startup
+        position_ -= dt / params_.travel_time;
+        if (position_ <= 0.0) {
+            position_ = 0.0;
+            phase_elapsed_ = 0.0;
+            state_ = ValveState::STALLING_CLOSE;
         }
         break;
     }

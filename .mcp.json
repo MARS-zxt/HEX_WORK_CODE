@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "visual-studio": {
+      "command": "C:\\Users\\80017206\\AppData\\Local\\VsMcp\\bin\\VsMcp.StdioProxy.exe",
+      "args": []
+    }
+  }
+}

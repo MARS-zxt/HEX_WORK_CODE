@@ -2,5 +2,5 @@
   <Configurations>
     <Platform Name="x64" />
   </Configurations>
-  <Project Path="ValveSimulator.vcxproj" />
+  <Project Path="ValveSimulator.vcxproj" Id="b869ef8e-bc5a-3a12-94ce-f021b98c3023" />
 </Solution>
