@@ -325,7 +325,7 @@ void MainWindow::processTcpCommand(const QString &cmd, QTcpSocket *client)
     }
     else if (cmd.startsWith("SET_DATA")) {
         // Format: SET_DATA key1=value1 key2=value2 ...
-        // Keys: open_time open_upper open_lower close_time close_upper close_lower
+        // Keys: open_time open_upper open_lower open_stall close_time close_upper close_lower close_stall
         auto parts = cmd.split(' ');
         for (int i = 1; i < parts.size(); ++i) {
             auto kv = parts[i].split('=');
@@ -336,9 +336,11 @@ void MainWindow::processTcpCommand(const QString &cmd, QTcpSocket *client)
             if (key == "open_time")        test_panel_->setOpenSmallTravelTime(val);
             else if (key == "open_upper")  test_panel_->setOpenCurrentUpper(val);
             else if (key == "open_lower")  test_panel_->setOpenCurrentLower(val);
+            else if (key == "open_stall")  test_panel_->setOpenStallCurrent(val);
             else if (key == "close_time")  test_panel_->setCloseSmallTravelTime(val);
             else if (key == "close_upper") test_panel_->setCloseCurrentUpper(val);
             else if (key == "close_lower") test_panel_->setCloseCurrentLower(val);
+            else if (key == "close_stall") test_panel_->setCloseStallCurrent(val);
         }
         client->write("OK SET_DATA\n");
     }

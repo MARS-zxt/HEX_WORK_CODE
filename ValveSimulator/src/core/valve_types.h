@@ -72,9 +72,11 @@ struct TestData {
     double close_small_travel_time = 0.0;
     double close_current_upper     = 0.0;
     double close_current_lower     = 0.0;
+    double close_stall_current     = 0.0;  // 关到位电流 (mA)
     double open_small_travel_time  = 0.0;
     double open_current_upper      = 0.0;
     double open_current_lower      = 0.0;
+    double open_stall_current      = 0.0;  // 开到位电流 (mA)
 };
 
 #endif // VALVE_TYPES_H

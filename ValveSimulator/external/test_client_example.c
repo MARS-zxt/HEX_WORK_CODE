@@ -28,6 +28,16 @@
     #define SLEEP_MS(ms) usleep((ms) * 1000)
 #endif
 
+
+// 阀门动作电流检测函数
+unsigned char valve_check()
+{
+
+    
+    return 0;
+}
+
+
 int main(void)
 {
     ValveClient client;
@@ -71,15 +81,23 @@ int main(void)
     //    result.open_time  = 2.20;
     //    result.open_upper = 150.0;
     //    result.open_lower = 0.0;
+    //    result.open_stall = 90.0;
     //    result.close_time  = 2.40;
     //    result.close_upper = 140.0;
     //    result.close_lower = 0.0;
-    //    valve_set_data(&client, &result);  // 更新 UI 上的 6 个数据字段
+    //    result.close_stall = 90.0;
+    //    valve_set_data(&client, &result);  // 更新 UI 上的 8 个数据字段
     //
     //  定时:
     //    SLEEP_MS(100);    100ms 延迟
     //
     // ============================================================
+
+    //step 1 阀门关阀2.0s后停止
+    valve_close(&client);
+    SLEEP_MS(2000);
+    valve_stop(&client); 
+    //step 2 阀门开阀,每0.1秒读取当前电流，当电流明显升高至一个稳定
 
     // 示例: 开阀 → 200ms 后查状态 → 输出结果到 UI → 停止
     valve_open(&client);
@@ -93,6 +111,7 @@ int main(void)
     result.open_time  = 0.20;
     result.open_upper = 36.0;
     result.open_lower = 0.0;
+    result.open_stall = 36.0;
     valve_set_data(&client, &result);
 
     valve_stop(&client);

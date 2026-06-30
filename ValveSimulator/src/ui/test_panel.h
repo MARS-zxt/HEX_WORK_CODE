@@ -24,9 +24,11 @@ public:
     void setCloseSmallTravelTime(double val);
     void setCloseCurrentUpper(double val);
     void setCloseCurrentLower(double val);
+    void setCloseStallCurrent(double val);
     void setOpenSmallTravelTime(double val);
     void setOpenCurrentUpper(double val);
     void setOpenCurrentLower(double val);
+    void setOpenStallCurrent(double val);
 
     // --- Log output --------------------------------------------------------
     void appendLog(const QString &text);
@@ -49,9 +51,11 @@ private:
     QLabel *close_time_val_  = nullptr;
     QLabel *close_upper_val_ = nullptr;
     QLabel *close_lower_val_ = nullptr;
+    QLabel *close_stall_val_ = nullptr;
     QLabel *open_time_val_   = nullptr;
     QLabel *open_upper_val_  = nullptr;
     QLabel *open_lower_val_  = nullptr;
+    QLabel *open_stall_val_  = nullptr;
 
     // Log
     QTextEdit *log_output_ = nullptr;

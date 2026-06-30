@@ -99,18 +99,21 @@ void TestPanel::setupUi()
     dataLayout->addWidget(makeLabelWidget(QStringLiteral("到位时间:"), labelStyle), 1, 0);
     dataLayout->addWidget(makeLabelWidget(QStringLiteral("电流上限:"), labelStyle), 2, 0);
     dataLayout->addWidget(makeLabelWidget(QStringLiteral("电流下限:"), labelStyle), 3, 0);
+    dataLayout->addWidget(makeLabelWidget(QStringLiteral("到位电流:"), labelStyle), 4, 0);
 
     // Column 1 : 关阀 headers + values
     dataLayout->addWidget(makeLabelWidget(QStringLiteral("关阀"), headerCloseStyle), 0, 1, Qt::AlignCenter);
     dataLayout->addWidget(makeValueWidget(close_time_val_),  1, 1, Qt::AlignCenter);
     dataLayout->addWidget(makeValueWidget(close_upper_val_), 2, 1, Qt::AlignCenter);
     dataLayout->addWidget(makeValueWidget(close_lower_val_), 3, 1, Qt::AlignCenter);
+    dataLayout->addWidget(makeValueWidget(close_stall_val_), 4, 1, Qt::AlignCenter);
 
     // Column 2 : 开阀 headers + values
     dataLayout->addWidget(makeLabelWidget(QStringLiteral("开阀"), headerOpenStyle), 0, 2, Qt::AlignCenter);
     dataLayout->addWidget(makeValueWidget(open_time_val_),  1, 2, Qt::AlignCenter);
     dataLayout->addWidget(makeValueWidget(open_upper_val_), 2, 2, Qt::AlignCenter);
     dataLayout->addWidget(makeValueWidget(open_lower_val_), 3, 2, Qt::AlignCenter);
+    dataLayout->addWidget(makeValueWidget(open_stall_val_), 4, 2, Qt::AlignCenter);
 
     mainLayout->addWidget(dataGroup);
 
@@ -196,6 +199,12 @@ void TestPanel::setOpenCurrentUpper(double val) {
 }
 void TestPanel::setOpenCurrentLower(double val) {
     open_lower_val_->setText(QString("%1 mA").arg(val, 0, 'f', 1));
+}
+void TestPanel::setCloseStallCurrent(double val) {
+    close_stall_val_->setText(QString("%1 mA").arg(val, 0, 'f', 1));
+}
+void TestPanel::setOpenStallCurrent(double val) {
+    open_stall_val_->setText(QString("%1 mA").arg(val, 0, 'f', 1));
 }
 
 // ============================================================================

@@ -76,6 +76,34 @@ ValveSimulator/
 
 ---
 
+## ⚠️ VS 编译铁律（每次必查）
+
+> **此项目有且仅有一个 VS 构建入口：`.slnx` 方案 + MSBuild。**
+
+| 规则 | 说明 |
+|------|------|
+| **打开方式** | VS 中打开 `ValveSimulator\ValveSimulator.slnx`，**不是**打开文件夹 |
+| **编译命令** | `mcp__visual-studio__build_solution`（基于 MSBuild） |
+| **输出目录** | `debug\` (Debug) 或 `release\` (Release) |
+| **禁止操作** | ❌ 不要用 CMake 文件夹模式 — `build_solution` 会超时 |
+| **禁止操作** | ❌ 不要从 Git Bash 直接运行 cmake — 缺少 vcvars64 环境 |
+
+### 标准编译运行流程（每次修改代码后）
+```
+1. get_status              → 确认 .slnx 已打开
+2. build_solution          → 编译
+3. get_build_errors        → 检查错误（仅 build 失败时）
+4. debug_start_without_debugging → Ctrl+F5 运行
+```
+
+### 如果 build_solution 超时
+说明 VS 处于 CMake 文件夹模式：
+```
+solution_close → solution_open 指向 ValVeSimulator.slnx
+```
+
+---
+
 ## 构建体系
 
 ### 构建 A：CMake + Ninja → `build\`（双击 exe / CLI 构建）

@@ -200,11 +200,15 @@ int valve_set_data(ValveClient *client, const TestResultData *data)
     remaining = sizeof(cmd) - (p - cmd);
     if (data->open_lower > 0.0) p += snprintf(p, remaining, " open_lower=%.1f", data->open_lower);
     remaining = sizeof(cmd) - (p - cmd);
+    if (data->open_stall > 0.0) p += snprintf(p, remaining, " open_stall=%.1f", data->open_stall);
+    remaining = sizeof(cmd) - (p - cmd);
     if (data->close_time  > 0.0) p += snprintf(p, remaining, " close_time=%.2f",  data->close_time);
     remaining = sizeof(cmd) - (p - cmd);
     if (data->close_upper > 0.0) p += snprintf(p, remaining, " close_upper=%.1f", data->close_upper);
     remaining = sizeof(cmd) - (p - cmd);
     if (data->close_lower > 0.0) p += snprintf(p, remaining, " close_lower=%.1f", data->close_lower);
+    remaining = sizeof(cmd) - (p - cmd);
+    if (data->close_stall > 0.0) p += snprintf(p, remaining, " close_stall=%.1f", data->close_stall);
 
     char resp[256];
     if (send_and_recv(client, cmd, resp, sizeof(resp)) < 0) return -1;
