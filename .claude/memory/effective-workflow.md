@@ -42,5 +42,5 @@ Source Code     ████     40%
 MCP Calls       ██       15%
 ```
 
-**Why:** 用户明确要求分析缓存命中率并给出 token 节省建议。已执行 CLAUDE.md 瘦身（248→207行）、建立 Memory 体系（6文件）、优化 .gitignore。
-**How to apply:** 每次开发时默认使用这些模式。代码修改后直接构建，不 Read 验证。多文件探索用 Agent。[[user-profile]] [[build-system]]
+**Why:** 用户明确要求分析缓存命中率并给出 token 节省建议。已执行 CLAUDE.md 瘦身（236→89行，-62%）、Memory 体系优化（7→4文件，合并去重）、.gitignore 完善。
+**How to apply:** 每次开发时默认使用这些模式。代码修改后直接构建，不 Read 验证。多文件探索用 Agent。[[user-profile]] [[project-reference]] [[coding-guide]]

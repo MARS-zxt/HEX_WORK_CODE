@@ -404,15 +404,39 @@ void MainWindow::onSimulatorStopped()
 // ============================================================================
 void MainWindow::onLaunchTestProgram()
 {
-    const QString programPath = QDir(QCoreApplication::applicationDirPath())
-                                    .absoluteFilePath(QStringLiteral("my_test.exe"));
+    const QString exeName = QStringLiteral("my_test.exe");
+    const QString appDir  = QCoreApplication::applicationDirPath();
 
-    if (!QFile::exists(programPath)) {
-        test_panel_->appendLog(QStringLiteral("[系统] ⚠ 未找到测试程序"));
-        test_panel_->appendLog(QStringLiteral("[系统]   路径: ") + programPath);
-        test_panel_->appendLog(QStringLiteral("[系统]   请将编译好的 my_test.exe 放在模拟器目录下"));
+    // Search paths (priority order):
+    //   1. Same directory as ValveSimulator.exe
+    //   2. external/ relative to project (dev build)
+    //   3. debug/   relative to project (VS MSBuild)
+    const QStringList searchPaths = {
+        appDir,
+        QDir(appDir).absoluteFilePath(QStringLiteral("external")),
+        QDir(appDir).absoluteFilePath(QStringLiteral("debug")),
+    };
+
+    QString programPath;
+    for (const auto &dir : searchPaths) {
+        QString candidate = QDir(dir).absoluteFilePath(exeName);
+        if (QFile::exists(candidate)) {
+            programPath = candidate;
+            break;
+        }
+    }
+
+    if (programPath.isEmpty()) {
+        test_panel_->appendLog(QStringLiteral("[系统] ⚠ 未找到测试程序 my_test.exe"));
+        test_panel_->appendLog(QStringLiteral("[系统]   已搜索:"));
+        for (const auto &dir : searchPaths) {
+            test_panel_->appendLog(QStringLiteral("[系统]     ") + QDir(dir).absoluteFilePath(exeName));
+        }
+        test_panel_->appendLog(QStringLiteral("[系统]   请将编译好的 my_test.exe 放入上述任一目录"));
         return;
     }
+
+    test_panel_->appendLog(QStringLiteral("[系统] 找到测试程序: ") + programPath);
 
     if (test_process_ && test_process_->state() != QProcess::NotRunning) {
         test_panel_->appendLog(QStringLiteral("[系统] ⚠ 测试程序已在运行中"));
@@ -430,13 +454,13 @@ void MainWindow::onLaunchTestProgram()
                 });
         connect(test_process_, &QProcess::readyReadStandardOutput, this, [this]() {
             const QString output =
-                QString::fromLocal8Bit(test_process_->readAllStandardOutput()).trimmed();
+                QString::fromUtf8(test_process_->readAllStandardOutput()).trimmed();
             if (!output.isEmpty())
                 test_panel_->appendLog(output);
         });
         connect(test_process_, &QProcess::readyReadStandardError, this, [this]() {
             const QString err =
-                QString::fromLocal8Bit(test_process_->readAllStandardError()).trimmed();
+                QString::fromUtf8(test_process_->readAllStandardError()).trimmed();
             if (!err.isEmpty())
                 test_panel_->appendLog(QStringLiteral("[stderr] ") + err);
         });
